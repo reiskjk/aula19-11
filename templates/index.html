@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem para o Ano Novo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #101827;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 450px;
+            padding: 40px;
+            text-align: center;
+            background: #1e293b;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .contador {
+            font-size: 80px;
+            font-weight: bold;
+            color: #5eead4;
+            margin: 20px 0;
+        }
+
+        .data {
+            color: #94a3b8;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+
+        <h1>Rumo a {{ ano_novo }}!</h1>
+
+        {% if dias_restantes is not none %}
+            <div class="contador">
+                {{ dias_restantes }}
+            </div>
+
+            <p>Dias para o Ano Novo!</p>
+        {% else %}
+            <p>Contagem ainda não implementada.</p>
+        {% endif %}
+
+        <p class="data">
+            Hoje é {{ data_atual }}
+        </p>
+
+    </main>
+</body>
+</html>
+
+
